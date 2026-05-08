@@ -1,0 +1,61 @@
+{
+  "id": "p3iqenrichment",
+  "name": "P3 IQ Enrichment",
+  "description": "P3 Adaptive enrichment content (acronyms, methodology cards, glossary entries, QnA) surfaced into M365 Copilot ambient grounding via Microsoft Search.",
+  "activitySettings": {
+    "urlToItemResolvers": [
+      {
+        "@odata.type": "#microsoft.graph.externalConnectors.itemIdResolver",
+        "priority": 1,
+        "itemId": "{slug}",
+        "urlMatchInfo": {
+          "baseUrls": ["https://p3ai.ai/iq/"],
+          "urlPattern": "/iq/(?<slug>[^/]+(?:/[^/]+)*)"
+        }
+      }
+    ]
+  },
+  "searchSettings": {
+    "searchResultTemplates": [
+      {
+        "id": "p3iqResultTemplate",
+        "priority": 1,
+        "layout": {
+          "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+          "type": "AdaptiveCard",
+          "version": "1.3",
+          "body": [
+            {
+              "type": "TextBlock",
+              "text": "${title}",
+              "weight": "Bolder",
+              "size": "Medium",
+              "wrap": true
+            },
+            {
+              "type": "TextBlock",
+              "text": "${summary}",
+              "wrap": true,
+              "isSubtle": true
+            },
+            {
+              "type": "FactSet",
+              "facts": [
+                { "title": "Source", "value": "${sourceType}" },
+                { "title": "Domain", "value": "${domain}" },
+                { "title": "Tier", "value": "${tier}" }
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": "Action.OpenUrl",
+              "title": "Open in P3 IQ",
+              "url": "${url}"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

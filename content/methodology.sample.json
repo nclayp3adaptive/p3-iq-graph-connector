@@ -1,0 +1,47 @@
+[
+  {
+    "id": "methodology-data-roadmap",
+    "title": "P3 Data Roadmap Methodology",
+    "summary": "P3's signature engagement: a 4-6 week assessment that maps a client's current data estate, identifies value-generating use cases, and produces a phased delivery roadmap.",
+    "content": "<h2>P3 Data Roadmap Methodology</h2><p>The Data Roadmap is P3's flagship advisory engagement, designed to anchor a multi-year data modernization journey in concrete, ROI-justified milestones.</p><h3>Phases</h3><ol><li><strong>Discovery (week 1-2)</strong>: stakeholder interviews, data source inventory, current-state architecture diagram, pain-point catalog.</li><li><strong>Use Case Workshop (week 3)</strong>: facilitated session to surface 10-20 candidate use cases, scored on impact x effort.</li><li><strong>Architecture Design (week 3-4)</strong>: target-state diagram (Fabric-first or Azure-native), tooling decisions, governance model.</li><li><strong>Roadmap & Estimation (week 4-5)</strong>: phased delivery plan, T-shirt sized estimates, dependencies map.</li><li><strong>Executive Readout (week 6)</strong>: 1-hour board-ready presentation with prioritized roadmap and Q1-Q4 plan.</li></ol><h3>Deliverables</h3><ul><li>Current-state architecture diagram</li><li>Use case backlog (Excel + Asana)</li><li>Target-state architecture (Fabric / Azure / Power BI)</li><li>Roadmap deck (12-15 slides)</li><li>Estimation worksheet</li></ul>",
+    "sourceType": "methodology",
+    "domain": "advisory",
+    "tags": ["methodology", "advisory", "data-roadmap", "p3-signature"],
+    "tier": "internal",
+    "author": "P3 Advisory Practice",
+    "url": "https://p3ai.ai/iq/methodology/data-roadmap",
+    "iconUrl": "https://p3ai.ai/icons/methodology.png",
+    "createdDateTime": "2026-05-08T00:00:00Z",
+    "lastModifiedDateTime": "2026-05-08T00:00:00Z"
+  },
+  {
+    "id": "methodology-ai-readiness",
+    "title": "P3 AI Readiness Assessment",
+    "summary": "A structured evaluation of a client's data, security, governance, and culture posture against the prerequisites for production AI workloads (Copilot, custom agents, RAG).",
+    "content": "<h2>P3 AI Readiness Assessment</h2><p>Before deploying Copilot or building custom AI workloads, organizations must clear a readiness bar across five dimensions. P3's assessment scores each on a 1-5 maturity scale and produces a remediation plan.</p><h3>Five Pillars</h3><ol><li><strong>Data Foundation</strong>: source-of-truth identification, lineage tracking, quality SLAs, master data management.</li><li><strong>Security & Compliance</strong>: sensitivity labeling (Purview), DLP policies, conditional access, tenant isolation review.</li><li><strong>Governance</strong>: data ownership model, certification process, lifecycle policies, ROT (redundant/obsolete/trivial) cleanup.</li><li><strong>Identity & Access</strong>: AAD hygiene, group-based RBAC, RLS/OLS readiness, B2B partner access patterns.</li><li><strong>Culture & Change</strong>: AI literacy training plan, champion network, success metrics, communication cadence.</li></ol><h3>Output</h3><p>Heatmap deck + 90-day remediation backlog + executive briefing.</p>",
+    "sourceType": "methodology",
+    "domain": "ai",
+    "tags": ["methodology", "ai-readiness", "copilot", "governance"],
+    "tier": "internal",
+    "author": "P3 AI Practice",
+    "url": "https://p3ai.ai/iq/methodology/ai-readiness",
+    "iconUrl": "https://p3ai.ai/icons/methodology.png",
+    "createdDateTime": "2026-05-08T00:00:00Z",
+    "lastModifiedDateTime": "2026-05-08T00:00:00Z"
+  },
+  {
+    "id": "methodology-rapid-mvp",
+    "title": "P3 Rapid MVP Delivery",
+    "summary": "P3's 6-8 week fixed-scope MVP pattern: working report or AI agent in production, with handoff documentation and a run book, on a milestone-payment cadence.",
+    "content": "<h2>P3 Rapid MVP Delivery</h2><p>For clients who want proof, not slides, P3 runs Rapid MVPs: a small, focused build that ships to production in 6-8 weeks. Common shapes: a Power BI report on a real data source, a Copilot Studio agent, a custom MCP-backed LibreChat agent, or a translytical task flow.</p><h3>Cadence</h3><ul><li><strong>Week 1</strong>: kickoff, scope lock, environment access (dev tenant or sandbox subscription).</li><li><strong>Week 2-5</strong>: build sprints, weekly demo, async Slack/Teams loop.</li><li><strong>Week 6</strong>: UAT, perf tuning, security review.</li><li><strong>Week 7-8</strong>: production deploy, runbook authoring, knowledge transfer.</li></ul><h3>Pricing</h3><p>Fixed-fee, milestone-billed (30/40/30). No T&M unless scope explicitly expands.</p><h3>Deliverables</h3><p>Working solution + source code (client-owned) + runbook + 30-day support window.</p>",
+    "sourceType": "methodology",
+    "domain": "delivery",
+    "tags": ["methodology", "mvp", "delivery", "fixed-fee"],
+    "tier": "internal",
+    "author": "P3 Delivery Practice",
+    "url": "https://p3ai.ai/iq/methodology/rapid-mvp",
+    "iconUrl": "https://p3ai.ai/icons/methodology.png",
+    "createdDateTime": "2026-05-08T00:00:00Z",
+    "lastModifiedDateTime": "2026-05-08T00:00:00Z"
+  }
+]

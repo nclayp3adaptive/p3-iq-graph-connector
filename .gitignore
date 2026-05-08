@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+*.pem
+*.pfx
+*.key
+.env
+.env.*
+combined.pem
+key.pem
+cert.pem
+.venv/
+venv/

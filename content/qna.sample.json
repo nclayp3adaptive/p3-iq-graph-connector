@@ -1,0 +1,47 @@
+[
+  {
+    "id": "qna-rls-vs-ols",
+    "title": "Q: When should I use RLS vs OLS in Power BI?",
+    "summary": "RLS filters rows based on user identity; OLS hides entire columns. Use RLS for tenant/region/role isolation, OLS for column-level secrets like SSN or salary.",
+    "content": "<h3>Q: When should I use RLS vs OLS in Power BI?</h3><h4>A:</h4><p><strong>Row-Level Security (RLS)</strong> filters which rows a user can see. Use it when:</p><ul><li>Multi-tenant scenarios (each client sees only their rows).</li><li>Regional/territorial scoping (sales reps see only their territory).</li><li>Hierarchy-based access (managers see their reports' data).</li></ul><p><strong>Object-Level Security (OLS)</strong> hides entire tables or columns. Use it when:</p><ul><li>Sensitive columns must be invisible (SSN, salary, margin).</li><li>Some users should not even know a table exists.</li><li>Compliance requires column-level redaction in reports.</li></ul><p><strong>Combining</strong>: RLS + OLS together is supported and common. Audit relationships and bidirectional cross-filters before assuming the model is locked down -- a single bidirectional relationship can leak rows across an RLS boundary.</p><p><strong>P3 tip</strong>: always test with 'View as Role' for RLS and a non-admin test account for OLS (admin sees everything regardless of OLS).</p>",
+    "sourceType": "qna",
+    "domain": "powerbi",
+    "tags": ["rls", "ols", "security", "powerbi"],
+    "tier": "public",
+    "author": "P3 IQ Practice",
+    "url": "https://p3ai.ai/iq/qna/rls-vs-ols",
+    "iconUrl": "https://p3ai.ai/icons/qna.png",
+    "createdDateTime": "2026-05-08T00:00:00Z",
+    "lastModifiedDateTime": "2026-05-08T00:00:00Z"
+  },
+  {
+    "id": "qna-cowork-vs-cea",
+    "title": "Q: Should P3 build a Custom Engine Agent or a Cowork plugin?",
+    "summary": "Both. Custom Engine Agent (CEA) gives P3 deep control of the model + retrieval stack; Cowork plugin is the right surface for ambient grounding inside M365.",
+    "content": "<h3>Q: Should P3 build a Custom Engine Agent or a Cowork plugin?</h3><h4>A:</h4><p>The two are complementary, not exclusive.</p><p><strong>Custom Engine Agent (CEA)</strong> -- e.g., <code>p3-iq-cea</code> -- gives P3 full control of the model (Kimi K2.6 today), retrieval stack (Foundry IQ + 17 Microsoft sources), and orchestration. CEAs surface in Teams via M365Extensions channel and in LibreChat via /v1/chat/completions. Use when: P3 needs deterministic behavior, custom tool chains, audit logging, or bring-your-own-model economics.</p><p><strong>Cowork plugin / Graph Connector</strong> gives P3 distribution inside the M365 chrome (Copilot in Word, Outlook, Teams) without building UX. Cowork handles conversation; P3 surfaces enrichment via this Graph Connector + Skills + declarative agent manifests. Use when: P3 wants ambient presence wherever the user already works, and is OK with Cowork's Anthropic-powered orchestration.</p><p><strong>P3 strategy</strong>: ship both. CEA for the dedicated 'P3 IQ' workflow; Graph Connector + Skills for ambient discovery via Cowork.</p>",
+    "sourceType": "qna",
+    "domain": "strategy",
+    "tags": ["cowork", "cea", "strategy", "p3-platform"],
+    "tier": "internal",
+    "author": "P3 IQ Practice",
+    "url": "https://p3ai.ai/iq/qna/cowork-vs-cea",
+    "iconUrl": "https://p3ai.ai/icons/qna.png",
+    "createdDateTime": "2026-05-08T00:00:00Z",
+    "lastModifiedDateTime": "2026-05-08T00:00:00Z"
+  },
+  {
+    "id": "qna-bridge-vs-obo",
+    "title": "Q: Bridge mode or OBO for new MCP integrations?",
+    "summary": "Default to bridge mode (3 headers) for inter-P3-service trust. Use OBO only when the downstream API requires audience-specific delegated tokens that LibreChat must mint per-call.",
+    "content": "<h3>Q: Bridge mode or OBO for new MCP integrations?</h3><h4>A:</h4><p><strong>Default: bridge mode.</strong> For any new MCP that lives inside the P3 platform and needs to act as a user, start with bridge mode: <code>X-Bridge-Token</code> (shared secret), <code>X-Microsoft-Token</code> (forwarded delegated AAD token), <code>X-User-Email</code> (audit). It's simpler, faster, and battle-tested across <code>p3-iq-mcp-gateway</code>, <code>p3-harvest-mcp</code>, etc.</p><p><strong>Use OBO when</strong>: the downstream API requires audience-specific tokens minted with LibreChat's app credentials (e.g., calling Graph with a Files.Read.All-scoped token that wasn't in the original user's consent). Wire <code>preProcessXTokens</code> in <code>graph.ts</code> + <code>{{LIBRECHAT_X_ACCESS_TOKEN}}</code> placeholder in <code>librechat-staging.yaml</code>.</p><p><strong>NEVER</strong>: SSE transport with per-user OBO. SSE processes tool calls in the GET task's context, so per-POST headers don't reach the MCP principal. Always <code>type: streamable-http</code> for delegated-token MCPs.</p>",
+    "sourceType": "qna",
+    "domain": "platform",
+    "tags": ["bridge-mode", "obo", "mcp", "auth"],
+    "tier": "internal",
+    "author": "P3 IQ Practice",
+    "url": "https://p3ai.ai/iq/qna/bridge-vs-obo",
+    "iconUrl": "https://p3ai.ai/icons/qna.png",
+    "createdDateTime": "2026-05-08T00:00:00Z",
+    "lastModifiedDateTime": "2026-05-08T00:00:00Z"
+  }
+]

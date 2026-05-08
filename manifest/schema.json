@@ -1,0 +1,80 @@
+{
+  "baseType": "microsoft.graph.externalItem",
+  "properties": [
+    {
+      "name": "title",
+      "type": "String",
+      "isQueryable": true,
+      "isSearchable": true,
+      "isRetrievable": true,
+      "labels": ["title"]
+    },
+    {
+      "name": "url",
+      "type": "String",
+      "isRetrievable": true,
+      "labels": ["url"]
+    },
+    {
+      "name": "iconUrl",
+      "type": "String",
+      "isRetrievable": true,
+      "labels": ["iconUrl"]
+    },
+    {
+      "name": "sourceType",
+      "type": "String",
+      "isQueryable": true,
+      "isRefinable": true,
+      "isRetrievable": true
+    },
+    {
+      "name": "domain",
+      "type": "String",
+      "isQueryable": true,
+      "isRefinable": true,
+      "isRetrievable": true
+    },
+    {
+      "name": "tags",
+      "type": "StringCollection",
+      "isQueryable": true,
+      "isRefinable": true,
+      "isRetrievable": true
+    },
+    {
+      "name": "tier",
+      "type": "String",
+      "isQueryable": true,
+      "isRefinable": true,
+      "isRetrievable": true
+    },
+    {
+      "name": "author",
+      "type": "String",
+      "isQueryable": true,
+      "isRetrievable": true,
+      "labels": ["createdBy", "lastModifiedBy"]
+    },
+    {
+      "name": "createdDateTime",
+      "type": "DateTime",
+      "isQueryable": true,
+      "isRetrievable": true,
+      "labels": ["createdDateTime"]
+    },
+    {
+      "name": "lastModifiedDateTime",
+      "type": "DateTime",
+      "isQueryable": true,
+      "isRetrievable": true,
+      "labels": ["lastModifiedDateTime"]
+    },
+    {
+      "name": "summary",
+      "type": "String",
+      "isSearchable": true,
+      "isRetrievable": true
+    }
+  ]
+}
