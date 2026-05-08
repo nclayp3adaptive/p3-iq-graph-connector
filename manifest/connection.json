@@ -20,7 +20,7 @@
   "searchSettings": {
     "searchResultTemplates": [
       {
-        "id": "p3iqResultTemplate",
+        "id": "p3iqResult",
         "priority": 1,
         "layout": {
           "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
