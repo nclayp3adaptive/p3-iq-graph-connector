@@ -9,7 +9,9 @@
         "priority": 1,
         "itemId": "{slug}",
         "urlMatchInfo": {
-          "baseUrls": ["https://p3ai.ai/iq/"],
+          "baseUrls": [
+            "https://p3ai.ai/iq/"
+          ],
           "urlPattern": "/iq/(?<slug>[^/]+(?:/[^/]+)*)"
         }
       }
@@ -41,9 +43,18 @@
             {
               "type": "FactSet",
               "facts": [
-                { "title": "Source", "value": "${sourceType}" },
-                { "title": "Domain", "value": "${domain}" },
-                { "title": "Tier", "value": "${tier}" }
+                {
+                  "title": "Source",
+                  "value": "${sourceType}"
+                },
+                {
+                  "title": "Domain",
+                  "value": "${domain}"
+                },
+                {
+                  "title": "Tier",
+                  "value": "${tier}"
+                }
               ]
             }
           ],
@@ -57,5 +68,8 @@
         }
       }
     ]
-  }
+  },
+  "enabledContentExperiences": [
+    "search"
+  ]
 }
