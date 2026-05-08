@@ -55,12 +55,21 @@ def _default_acl(tenant_id: str = P3_TENANT_ID) -> List[Dict[str, str]]:
     ]
 
 
+# Microsoft Graph external connector schema requires explicit OData type
+# annotations for Collection-typed properties. Map field name -> annotation.
+_ODATA_COLLECTION_TYPES = {
+    'tags': '#Collection(String)',
+}
+
 def _build_properties(item: Dict[str, Any]) -> Dict[str, Any]:
     """Pull only the schema-defined fields, in the right shape."""
     props: Dict[str, Any] = {}
     for key in SCHEMA_PROPERTY_NAMES:
         if key in item and item[key] is not None:
             props[key] = item[key]
+            odata_type = _ODATA_COLLECTION_TYPES.get(key)
+            if odata_type:
+                props[key + '@odata.type'] = odata_type
     return props
 
 

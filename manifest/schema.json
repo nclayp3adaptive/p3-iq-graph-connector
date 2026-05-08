@@ -7,19 +7,25 @@
       "isQueryable": true,
       "isSearchable": true,
       "isRetrievable": true,
-      "labels": ["title"]
+      "labels": [
+        "title"
+      ]
     },
     {
       "name": "url",
       "type": "String",
       "isRetrievable": true,
-      "labels": ["url"]
+      "labels": [
+        "url"
+      ]
     },
     {
       "name": "iconUrl",
       "type": "String",
       "isRetrievable": true,
-      "labels": ["iconUrl"]
+      "labels": [
+        "iconUrl"
+      ]
     },
     {
       "name": "sourceType",
@@ -50,25 +56,40 @@
       "isRetrievable": true
     },
     {
-      "name": "author",
+      "name": "createdBy",
       "type": "String",
       "isQueryable": true,
       "isRetrievable": true,
-      "labels": ["createdBy", "lastModifiedBy"]
+      "labels": [
+        "createdBy"
+      ]
+    },
+    {
+      "name": "lastModifiedBy",
+      "type": "String",
+      "isQueryable": true,
+      "isRetrievable": true,
+      "labels": [
+        "lastModifiedBy"
+      ]
     },
     {
       "name": "createdDateTime",
       "type": "DateTime",
       "isQueryable": true,
       "isRetrievable": true,
-      "labels": ["createdDateTime"]
+      "labels": [
+        "createdDateTime"
+      ]
     },
     {
       "name": "lastModifiedDateTime",
       "type": "DateTime",
       "isQueryable": true,
       "isRetrievable": true,
-      "labels": ["lastModifiedDateTime"]
+      "labels": [
+        "lastModifiedDateTime"
+      ]
     },
     {
       "name": "summary",
